@@ -1,0 +1,28 @@
+.drink {
+  background: var(--mainWhite);
+  margin-bottom: 2rem;
+  box-shadow: var(--lightShadow);
+  transition: var(--mainTransition);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  border-radius: var(--mainBorderRadius);
+}
+.drink:hover {
+  box-shadow: var(--darkShadow);
+}
+
+.drink-footer {
+  padding: 1.5rem;
+}
+.drink-footer h3,
+.drink-footer h4,
+.drink-footer p {
+  margin-bottom: 0.3rem;
+}
+.drink-footer h3 {
+  font-size: 2rem;
+}
+.drink-footer p {
+  color: var(--darkGrey);
+  margin-bottom: 0.5rem;
+}
