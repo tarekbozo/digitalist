@@ -2,8 +2,9 @@
 
 
 ## In the project directory, you can run:
-### `yarn` or
-###`npm install`
+ `yarn` 
+ or
+`npm install`
 to install the dependency
 
 ## to start the App
