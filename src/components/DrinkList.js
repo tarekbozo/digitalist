@@ -11,9 +11,6 @@ export const DrinkList = () => {
   const loadMoreHandlar = () => {
     setload((prevValue) => prevValue + 3);
   };
-  if (drinks.length < 1) {
-    return <h2 className='section-title'>no Drinks matched your search</h2>;
-  }
 
   return (
     <section className='section'>
@@ -22,6 +19,11 @@ export const DrinkList = () => {
           return <Drink key={item.id} {...item} />;
         })}
         {loading && [1, 2, 3, 4, 5].map((card) => <Skeleton key={card} />)}
+        {drinks.length < 1 ? (
+          <h2 className='section-title'>No drink Match </h2>
+        ) : (
+          ''
+        )}
       </div>
 
       {/*Pagination */}
