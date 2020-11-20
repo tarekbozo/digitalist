@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect, createContext } from 'react';
 import { useCallback } from 'react';
+import axios from 'axios';
 
 const url = '/api/json/2.1/searchProduct.json?query=';
 const AppContext = createContext();
@@ -7,16 +8,14 @@ const AppContext = createContext();
 const AppProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [load, setload] = useState(5);
-  const [searchTerm, setSearchTerm] = useState('Sigtuna');
+  const [searchTerm, setSearchTerm] = useState('sigtuna');
   const [drinks, setDrinks] = useState([]);
 
   const fetchDrinks = useCallback(async () => {
     setLoading(true);
     try {
-      const response = await fetch(`${url}${searchTerm}`);
-      const data = await response.json();
-
-      const { items } = data;
+      const response = await axios.get(`${url}${searchTerm}`);
+      const { items } = response.data;
 
       if (items) {
         const newDrink = items.map((item) => {
